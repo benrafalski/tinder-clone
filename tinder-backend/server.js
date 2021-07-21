@@ -22,7 +22,7 @@ let db = mongoose.connection
 
 // check db connection
 db.once('open', () => {
-    console.log('connected to MongoDB!')
+    console.log('connected to tinderDB')
 })
 
 // check for db errors

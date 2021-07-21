@@ -1,28 +1,20 @@
-import { SwipeableDrawer } from "@material-ui/core"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import TinderCard from "react-tinder-card"
 import './TinderCards.css'
+import axios from './axios'
 
 const TinderCards = () => {
-    const [people, setPeople] = useState([
-        {
-            name: 'Emily Ratajkowski',
-            url: 'https://www.mensjournal.com/wp-content/uploads/mf/_main_emily2.jpg?quality=86&strip=all',
-        },
-        {
-            name: 'Megan Fox',
-            url: 'https://www.hellomagazine.com/imagenes/celebrities/20210714117519/megan-fox-jaw-dropping-must-see-pictures/0-569-69/megan-fox-shower-selfie-z.jpg',
-        },
-        {
-            name: 'Kendall Jenner',
-            url: 'https://styles.redditmedia.com/t5_2swnp/styles/communityIcon_wfreylpcyp461.jpg',
-        },
-        {
-            name: 'Bella Hadid',
-            url: 'https://www.beautycrew.com.au/media/39620/bella.jpg'
+    const [people, setPeople] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const req = await axios.get('/tinder/cards') 
+
+            setPeople(req.data)
         }
 
-    ])
+        fetchData()
+    }, [])
 
     const swiped = (direction, nameToDelete) => {
         console.log(`removing: ${nameToDelete}`)
