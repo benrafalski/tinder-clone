@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const Cors = require('cors')
 const Card = require('./models/Card.js')
 
 
@@ -8,6 +9,8 @@ const app = express()
 const port = process.env.PORT || 8000
 
 // Middlewares
+app.use(express.json())
+app.use(Cors())
 
 // DB Config
 mongoose.connect('mongodb://localhost/tinderDB', {
@@ -32,10 +35,10 @@ app.get('/', (req, res) => {
     res.status(200).send('hello world')    
 })
 
-app.post('/tinder/card', (req, res) => {
+app.post('/tinder/cards', (req, res) => {
     const dbCard = req.body;
 
-    Cards.create(dbCard, (err, data) => {
+    Card.create(dbCard, (err, data) => {
         if(err){
             res.status(500).send(err)
         }else{
@@ -44,10 +47,10 @@ app.post('/tinder/card', (req, res) => {
     })
 })
 
-app.get('/tinder/card', (req, res) => {
+app.get('/tinder/cards', (req, res) => {
     const dbCard = req.body;
 
-    Cards.find((err, data) => {
+    Card.find((err, data) => {
         if(err){
             res.status(500).send(err)
         }else{
