@@ -6,12 +6,20 @@ import './TinderCards.css'
 const TinderCards = () => {
     const [people, setPeople] = useState([
         {
-            name: 'Elon Musk',
-            url: 'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg',
+            name: 'Emily Ratajkowski',
+            url: 'https://www.mensjournal.com/wp-content/uploads/mf/_main_emily2.jpg?quality=86&strip=all',
         },
         {
-            name: 'Jeff Bezos',
-            url: 'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5bb22ae84bbe6f67d2e82e05%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D509%26cropX2%3D1763%26cropY1%3D185%26cropY2%3D1440',
+            name: 'Megan Fox',
+            url: 'https://www.hellomagazine.com/imagenes/celebrities/20210714117519/megan-fox-jaw-dropping-must-see-pictures/0-569-69/megan-fox-shower-selfie-z.jpg',
+        },
+        {
+            name: 'Kendall Jenner',
+            url: 'https://styles.redditmedia.com/t5_2swnp/styles/communityIcon_wfreylpcyp461.jpg',
+        },
+        {
+            name: 'Bella Hadid',
+            url: 'https://www.beautycrew.com.au/media/39620/bella.jpg'
         }
 
     ])
